@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{7D023E81-8A3B-03AE-E573-63FE87824031}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairyGUI", "FairyGUI.csproj", "{40A02E42-70F9-B5F1-0304-1F310E0DB673}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairyGUI-Editor", "FairyGUI-Editor.csproj", "{05CF2308-AB86-37B0-B78A-BEEF31BB2E01}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{8654D017-C85C-8746-AA52-62D604B61A4E}"
 EndProject
 Global
@@ -15,6 +19,14 @@ Global
 		{7D023E81-8A3B-03AE-E573-63FE87824031}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D023E81-8A3B-03AE-E573-63FE87824031}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D023E81-8A3B-03AE-E573-63FE87824031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40A02E42-70F9-B5F1-0304-1F310E0DB673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A02E42-70F9-B5F1-0304-1F310E0DB673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A02E42-70F9-B5F1-0304-1F310E0DB673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A02E42-70F9-B5F1-0304-1F310E0DB673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05CF2308-AB86-37B0-B78A-BEEF31BB2E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CF2308-AB86-37B0-B78A-BEEF31BB2E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CF2308-AB86-37B0-B78A-BEEF31BB2E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CF2308-AB86-37B0-B78A-BEEF31BB2E01}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8654D017-C85C-8746-AA52-62D604B61A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8654D017-C85C-8746-AA52-62D604B61A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8654D017-C85C-8746-AA52-62D604B61A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU

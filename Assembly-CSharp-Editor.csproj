@@ -67,6 +67,7 @@
     <Compile Include="Assets/XLua/Editor/ExampleConfig.cs" />
     <Compile Include="Assets/XLua/Src/Editor/Generator.cs" />
     <Compile Include="Assets/XLua/Src/Editor/Hotfix.cs" />
+    <Compile Include="Assets/FairyGui/Examples/Editor/BuildAssetBundles.cs" />
     <Compile Include="Assets/XLua/Src/Editor/TemplateRef.cs" />
     <Compile Include="Assets/XLua/Examples/13_BuildFromCLI/Editor/BuildFromCLI.cs" />
     <Compile Include="Assets/XLua/Src/Editor/LinkXmlGen/LinkXmlGen.cs" />
@@ -1098,6 +1099,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj" />
+    <ProjectReference Include="FairyGUI.csproj" />
+    <ProjectReference Include="FairyGUI-Editor.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>
