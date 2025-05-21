@@ -10,17 +10,25 @@ public class GameEntry : MonoBehaviour
     {
         Instance = this;
 
-        if (ABMgr.Instance == null || !ABMgr.Instance.HasInit) { 
-            ABMgr.Instance.Init(InitCo);
+        if (ABMgr.Instance == null || !ABMgr.Instance.HasInit)
+        {
+            ABMgr.Instance.Init(Init);
         }
         else
         {
-            InitCo();
+            Init();
         }
     }
 
-    private void InitCo()
+    private void Init()
     {
+
         Debug.Log("============>>  game init");
+        StartCoroutine(initCo());
+    }
+
+    private IEnumerator initCo()
+    {
+        yield return null;
     }
 }
