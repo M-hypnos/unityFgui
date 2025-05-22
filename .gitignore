@@ -19,3 +19,8 @@ Bundles/StandaloneWindows64/DefaultPackage/Simulate/DefaultPackage.version
 Bundles/StandaloneWindows64/DefaultPackage/Simulate/DefaultPackage_Simulate.bytes
 Bundles/StandaloneWindows64/DefaultPackage/Simulate/DefaultPackage_Simulate.hash
 Bundles/StandaloneWindows64/DefaultPackage/Simulate/DefaultPackage_Simulate.json
+YooAsset.csproj
+YooAsset.Editor.csproj
+.vs/
+Bundles/
+obj/

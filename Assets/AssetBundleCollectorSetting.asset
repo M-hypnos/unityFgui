@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AssetBundleCollectorSetting
   m_EditorClassIdentifier: 
   ShowPackageView: 1
-  ShowEditorAlias: 0
+  ShowEditorAlias: 1
   UniqueBundleName: 0
   Packages:
   - PackageName: DefaultPackage
@@ -33,7 +33,7 @@ MonoBehaviour:
         CollectorGUID: b92e5e785e290f84ebbac3498f3dbc5b
         CollectorType: 0
         AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
+        PackRuleName: PackCollector
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
@@ -46,7 +46,20 @@ MonoBehaviour:
         CollectorGUID: 423affc5fd777b84ba1b7edee7cec3e1
         CollectorType: 0
         AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
+        PackRuleName: PackCollector
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Prefab
+      GroupDesc: 
+      AssetTags: prefab
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/ABResource/Prefab
+        CollectorGUID: 0b7fcf40d7cce15428d15d4d00c4cb26
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackCollector
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 

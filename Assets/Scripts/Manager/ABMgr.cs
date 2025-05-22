@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Assertions;
 using YooAsset;
+using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 
 public class ABMgr : SingletonMono<ABMgr>
 {
@@ -13,6 +15,8 @@ public class ABMgr : SingletonMono<ABMgr>
     private bool _hotUpdate = false;
 
     private Dictionary<string, byte[]> _luaDataMap;
+
+    private Dictionary<string, ABRecord> _loadABBundles;
 
     public override void Awake()
     {
@@ -29,6 +33,7 @@ public class ABMgr : SingletonMono<ABMgr>
     
     private IEnumerator InitPackage()
     {
+        //资源部初始化
         YooAssets.Initialize();
         var package = YooAssets.TryGetPackage("DefaultPackage");
         if(package == null)
@@ -39,32 +44,59 @@ public class ABMgr : SingletonMono<ABMgr>
 
         InitializationOperation initOperation = null;
 
-#if UNITY_EDITOR
-        Debug.Log(" ===============>>   编辑器");
-        var buildResult = EditorSimulateModeHelper.SimulateBuild("DefaultPackage");
-        var initParameters = new EditorSimulateModeParameters();
-        initParameters.EditorFileSystemParameters = FileSystemParameters.CreateDefaultEditorFileSystemParameters(buildResult.PackageRootDirectory);
-        initOperation = package.InitializeAsync(initParameters);
-#else
-        Debug.Log(" ===============>>   模拟真机");
-        if (_hotUpdate)
-        {
-            string defaultHostServer = "http://127.0.0.1/CDN/Android/v1.0";
-               string fallbackHostServer = "http://127.0.0.1/CDN/Android/v1.0";
-            IRemoteServices remoteServices = new RemoteServices(defaultHostServer, fallbackHostServer);
-            var initParameters = new HostPlayModeParameters();
-            initParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
-            initParameters.CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices);
-            initOperation = package.InitializeAsync(initParameters);
-        }
-        else
-        {
+//#if UNITY_EDITOR
+//        Debug.Log(" ===============>>   编辑器");
+//        var buildResult = EditorSimulateModeHelper.SimulateBuild("DefaultPackage");
+//        var initParameters = new EditorSimulateModeParameters();
+//        initParameters.EditorFileSystemParameters = FileSystemParameters.CreateDefaultEditorFileSystemParameters(buildResult.PackageRootDirectory);
+//        initOperation = package.InitializeAsync(initParameters);
+//#else
+//        Debug.Log(" ===============>>   模拟真机");
+//        if (_hotUpdate)
+//        {
+//            string defaultHostServer = "http://127.0.0.1/CDN/Android/v1.0";
+//            string fallbackHostServer = "http://127.0.0.1/CDN/Android/v1.0";
+//            IRemoteServices remoteServices = new RemoteServices(defaultHostServer, fallbackHostServer);
+//            var initParameters = new HostPlayModeParameters();
+//            initParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
+//            initParameters.CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices);
+//            initOperation = package.InitializeAsync(initParameters);
+//        }
+//        else
+//        {
             var initParameters = new OfflinePlayModeParameters();
             initParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
             initOperation = package.InitializeAsync(initParameters);
+//        }
+//#endif
+        yield return initOperation;
+
+        if (initOperation.Status != EOperationStatus.Succeed)
+        {
+            Debug.LogError(initOperation.Error);
+            yield break;
         }
-#endif
-        yield return null;
+
+        //资源包在初始化成功之后，需要获取包裹版本
+        var requetVersionOp = package.RequestPackageVersionAsync(false);
+        yield return requetVersionOp;
+        if (requetVersionOp.Status != EOperationStatus.Succeed)
+        {
+            Debug.LogError(requetVersionOp.Error);
+            yield break;
+        }
+        Debug.Log($"Request package Version : {requetVersionOp.PackageVersion}");
+
+        //更新资源清单
+        var updateManifestOp = package.UpdatePackageManifestAsync(requetVersionOp.PackageVersion);
+        yield return updateManifestOp;
+        if (updateManifestOp.Status != EOperationStatus.Succeed)
+        {
+            Debug.LogError(updateManifestOp.Error);
+            yield break;
+        }
+
+        StartCoroutine(loadLuaAssetCo());
     }
 
     private class RemoteServices : IRemoteServices
@@ -87,6 +119,29 @@ public class ABMgr : SingletonMono<ABMgr>
         }
     }
 
+    IEnumerator loadLuaAssetCo()
+    {
+        if (GlobalLuaEnv.readFromStreaming)
+        {
+            yield return LoadAssetsCo("main.lua.txt", typeof(TextAsset));
+        }
+    }
+
+    public IEnumerator LoadAssetsCo(string path, Type type)
+    {
+        ABRecord record;
+        if(!_loadABBundles.ContainsKey(path))
+        {
+            record = new ABRecord(path, path);
+            _loadABBundles[path] = record;
+
+            AllAssetsHandle allAssetsHandle = _package.LoadAllAssetsAsync(path, type);
+            yield return allAssetsHandle;
+            //record.SetHandleBase(allAssetsHandle);
+        }
+        record = _loadABBundles[path];
+    }
+
     public byte[] loadLuaFile(string fileName)
     {
         fileName.Replace('\\', '/');
@@ -99,4 +154,6 @@ public class ABMgr : SingletonMono<ABMgr>
 
         return data;
     }
+
+
 }

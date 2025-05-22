@@ -10,7 +10,7 @@ using System.Linq;
 
 public class GlobalLuaEnv : SingletonMono<GlobalLuaEnv>
 {
-    public static bool readFromStreaming = false;
+    public static bool readFromStreaming = true;
     public LuaEnv luaEnv;
     private IntPtr lPtr;
 
@@ -55,7 +55,7 @@ public class GlobalLuaEnv : SingletonMono<GlobalLuaEnv>
             else
             {
                 filepath = filepath.Replace(".", "/");
-                string path = Application.dataPath + "/ABResource/Lua/" + filepath + ".lua";
+                string path = Application.dataPath + "/ABResource/Lua/" + filepath + ".lua.txt";
                 if (File.Exists(path))
                 {
                     return GetUTF8String(File.ReadAllBytes(path));
@@ -75,11 +75,6 @@ public class GlobalLuaEnv : SingletonMono<GlobalLuaEnv>
 
         lPtr = luaEnv.L;
 
-        //var results = luaEnv.DoString("return require(\"main\")");
-        //LuaTable main = (LuaTable)results[0];
-        //luaInit = main.Get<LuaFunction>("init");
-        //luaTick = main.Get<LuaFunction>("tick");
-        //luaDispose = main.Get<LuaFunction>("dispose");
         var results = luaEnv.DoString("return require 'main'");
         LuaTable main = results[0] as LuaTable;
         _luaInit = main.Get<Action>("init");

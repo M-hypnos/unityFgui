@@ -1,0 +1,15 @@
+local main = {}
+
+main.init = function()
+    print("==========>>  main.init")
+end
+
+main.update = function()
+    -- print("==========>>  main.update")
+end
+
+main.exit = function()
+    print("==========>>  main.exit")
+end
+
+return main

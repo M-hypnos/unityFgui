@@ -1,0 +1,166 @@
+{
+    "Summary": {
+        "YooVersion": "",
+        "UnityVersion": "2022.3.57f1c2",
+        "BuildDate": "2025/5/22 17:00:02",
+        "BuildSeconds": 3,
+        "BuildTarget": 19,
+        "BuildPipeline": "BuiltinBuildPipeline",
+        "BuildBundleType": 2,
+        "BuildPackageName": "DefaultPackage",
+        "BuildPackageVersion": "2025-05-22-1019",
+        "BuildPackageNote": "2025/5/22 16:59:58",
+        "UniqueBundleName": false,
+        "EnableAddressable": false,
+        "LocationToLower": false,
+        "IncludeAssetGUID": false,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
+        "ClearBuildCacheFiles": false,
+        "UseAssetDependencyDB": false,
+        "EnableSharePackRule": true,
+        "SingleReferencedPackAlone": true,
+        "EncryptionClassName": "null",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "WriteLinkXML": true,
+        "CacheServerHost": "",
+        "CacheServerPort": 0,
+        "BuiltinShadersBundleName": "",
+        "MonoScriptsBundleName": "",
+        "AssetFileTotalCount": 4,
+        "MainAssetTotalCount": 4,
+        "AllBundleTotalCount": 3,
+        "AllBundleTotalSize": 16199,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "",
+            "AssetPath": "Assets/ABResource/Lua/main.lua.txt",
+            "AssetGUID": "e757c7e76f69e58419feea38113aff88",
+            "AssetTags": [
+                "lua"
+            ],
+            "MainBundleName": "assets_abresource_lua.bundle",
+            "MainBundleSize": 1364,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/ABResource/Lua/test.lua.txt",
+            "AssetGUID": "7ed021af57b0a034698e7f4fe9c77593",
+            "AssetTags": [
+                "lua"
+            ],
+            "MainBundleName": "assets_abresource_lua.bundle",
+            "MainBundleSize": 1364,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/ABResource/Prefab/RawImage.prefab",
+            "AssetGUID": "ffa8d274f011b984eacc451093720ed8",
+            "AssetTags": [
+                "prefab"
+            ],
+            "MainBundleName": "assets_abresource_prefab.bundle",
+            "MainBundleSize": 7433,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/ABResource/UI/btn1.png",
+                    "AssetGUID": "aee20eaf84637df42aba5163ec937ca9"
+                }
+            ],
+            "DependBundles": [
+                "assets_abresource_ui.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/ABResource/UI/btn1.png",
+            "AssetGUID": "aee20eaf84637df42aba5163ec937ca9",
+            "AssetTags": [
+                "ui"
+            ],
+            "MainBundleName": "assets_abresource_ui.bundle",
+            "MainBundleSize": 7402,
+            "DependAssets": [],
+            "DependBundles": []
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "assets_abresource_lua.bundle",
+            "FileName": "53c03802af45d23534065ad2038b25ac.bundle",
+            "FileHash": "53c03802af45d23534065ad2038b25ac",
+            "FileCRC": "1526ad85",
+            "FileSize": 1364,
+            "Encrypted": false,
+            "Tags": [
+                "lua"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/Lua/main.lua.txt",
+                    "AssetGUID": "e757c7e76f69e58419feea38113aff88"
+                },
+                {
+                    "AssetPath": "Assets/ABResource/Lua/test.lua.txt",
+                    "AssetGUID": "7ed021af57b0a034698e7f4fe9c77593"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_prefab.bundle",
+            "FileName": "c1c06bc127c8352beabac7c05c16bfa9.bundle",
+            "FileHash": "c1c06bc127c8352beabac7c05c16bfa9",
+            "FileCRC": "ba53cd2d",
+            "FileSize": 7433,
+            "Encrypted": false,
+            "Tags": [
+                "prefab"
+            ],
+            "DependBundles": [
+                "assets_abresource_ui.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/Prefab/RawImage.prefab",
+                    "AssetGUID": "ffa8d274f011b984eacc451093720ed8"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_ui.bundle",
+            "FileName": "94ad26ed5ea5e10a2437f8a7fa682763.bundle",
+            "FileHash": "94ad26ed5ea5e10a2437f8a7fa682763",
+            "FileCRC": "3b3563eb",
+            "FileSize": 7402,
+            "Encrypted": false,
+            "Tags": [
+                "prefab",
+                "ui"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_abresource_prefab.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/UI/btn1.png",
+                    "AssetGUID": "aee20eaf84637df42aba5163ec937ca9"
+                }
+            ]
+        }
+    ],
+    "IndependAssets": []
+}

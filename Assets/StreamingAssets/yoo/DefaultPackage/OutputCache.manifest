@@ -1,0 +1,14 @@
+ManifestFileVersion: 0
+CRC: 2283486975
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: assets_abresource_ui.bundle
+      Dependencies: {}
+    Info_1:
+      Name: assets_abresource_lua.bundle
+      Dependencies: {}
+    Info_2:
+      Name: assets_abresource_prefab.bundle
+      Dependencies:
+        Dependency_0: assets_abresource_ui.bundle

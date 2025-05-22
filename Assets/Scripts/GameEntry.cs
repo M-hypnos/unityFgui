@@ -13,15 +13,15 @@ public class GameEntry : MonoBehaviour
     {
         Instance = this;
 
-        //if (ABMgr.Instance == null || !ABMgr.Instance.HasInit)
-        //{
-        //    ABMgr.Instance.Init(Init);
-        //}
-        //else
-        //{
+        if (ABMgr.Instance == null || !ABMgr.Instance.HasInit)
+        {
+            ABMgr.Instance.Init(Init);
+        }
+        else
+        {
             Init();
-        //}
-    }
+        }
+}
 
     private void Init()
     {
