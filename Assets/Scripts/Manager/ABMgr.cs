@@ -27,6 +27,7 @@ public class ABMgr : SingletonMono<ABMgr>
     public void Init(Action finishCb)
     {
         _initFinishCb = finishCb;
+        _loadABBundles = new Dictionary<string, ABRecord>();
 
         StartCoroutine(InitPackage());
     }
@@ -123,23 +124,26 @@ public class ABMgr : SingletonMono<ABMgr>
     {
         if (GlobalLuaEnv.readFromStreaming)
         {
-            yield return LoadAssetsCo("main.lua.txt", typeof(TextAsset));
+            yield return LoadAssetsCo("Assets/ABResource/Lua/main.lua.txt", typeof(TextAsset));
         }
     }
 
     public IEnumerator LoadAssetsCo(string path, Type type)
     {
         ABRecord record;
-        if(!_loadABBundles.ContainsKey(path))
+        if(!_loadABBundles.TryGetValue(path, out record))
         {
             record = new ABRecord(path, path);
             _loadABBundles[path] = record;
 
             AllAssetsHandle allAssetsHandle = _package.LoadAllAssetsAsync(path, type);
             yield return allAssetsHandle;
+            foreach (var assetObj in allAssetsHandle.AllAssetObjects)
+            {
+                Debug.Log(assetObj.name);
+            }
             //record.SetHandleBase(allAssetsHandle);
         }
-        record = _loadABBundles[path];
     }
 
     public byte[] loadLuaFile(string fileName)
