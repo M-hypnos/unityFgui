@@ -6,3 +6,6 @@ Assembly-CSharp.csproj
 FairyGUI-Editor.csproj
 FairyGUI.csproj
 unityFgui.sln
+.vsconfig
+Temp/
+UserSettings/
