@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using YooAsset;
 
@@ -10,6 +11,8 @@ public class ABMgr : SingletonMono<ABMgr>
     private Action _initFinishCb;
     private ResourcePackage _package;
     private bool _hotUpdate = false;
+
+    private Dictionary<string, byte[]> _luaDataMap;
 
     public override void Awake()
     {
@@ -82,5 +85,18 @@ public class ABMgr : SingletonMono<ABMgr>
         {
             return $"{_fallbackHostServer}/{fileName}";
         }
+    }
+
+    public byte[] loadLuaFile(string fileName)
+    {
+        fileName.Replace('\\', '/');
+        string path = fileName + ".lua";
+        byte[] data = null;
+        if(!_luaDataMap.TryGetValue(fileName, out data))
+        {
+
+        }
+
+        return data;
     }
 }

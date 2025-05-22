@@ -9,3 +9,13 @@ unityFgui.sln
 .vsconfig
 Temp/
 UserSettings/
+.vs/unityFgui/FileContentIndex/7cac6455-64c1-42e8-b9ac-56f756a8fb24.vsidx
+.vs/unityFgui/v17/.suo
+.vs/unityFgui/v17/DocumentLayout.json
+obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
+obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Bundles/StandaloneWindows64/DefaultPackage/Simulate/DefaultPackage.version
+Bundles/StandaloneWindows64/DefaultPackage/Simulate/DefaultPackage_Simulate.bytes
+Bundles/StandaloneWindows64/DefaultPackage/Simulate/DefaultPackage_Simulate.hash
+Bundles/StandaloneWindows64/DefaultPackage/Simulate/DefaultPackage_Simulate.json
