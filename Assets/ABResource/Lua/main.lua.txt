@@ -1,7 +1,11 @@
 local main = {}
 
+print("==========>>  main.lua")
+
 main.init = function()
     print("==========>>  main.init")
+    local test = require("test")
+
 end
 
 main.update = function()

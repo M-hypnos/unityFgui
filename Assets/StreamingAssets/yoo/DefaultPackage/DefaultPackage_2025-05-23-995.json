@@ -1,0 +1,146 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 2,
+    "BuildPipeline": "BuiltinBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2025-05-23-995",
+    "PackageNote": "2025/5/23 16:35:39",
+    "AssetList": [
+        {
+            "Address": "main.lua",
+            "AssetPath": "Assets/ABResource/Lua/main.lua.txt",
+            "AssetGUID": "",
+            "AssetTags": [
+                "lua"
+            ],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "test.lua",
+            "AssetPath": "Assets/ABResource/Lua/test.lua.txt",
+            "AssetGUID": "",
+            "AssetTags": [
+                "lua"
+            ],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "RawImage",
+            "AssetPath": "Assets/ABResource/Prefab/RawImage.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "prefab"
+            ],
+            "BundleID": 1,
+            "DependBundleIDs": [
+                4
+            ]
+        },
+        {
+            "Address": "Image",
+            "AssetPath": "Assets/ABResource/Prefab2/Image.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "prefab2"
+            ],
+            "BundleID": 2,
+            "DependBundleIDs": [
+                3
+            ]
+        },
+        {
+            "Address": "btn1",
+            "AssetPath": "Assets/ABResource/UI/btn1.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ui"
+            ],
+            "BundleID": 3,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "B标签_词条_橙",
+            "AssetPath": "Assets/ABResource/UI/UI2/B标签_词条_橙.png",
+            "AssetGUID": "",
+            "AssetTags": [
+                "ui"
+            ],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_abresource_lua.bundle",
+            "UnityCRC": 1100442442,
+            "FileHash": "32b0a4f1b82f13e09deab2f5e6a345fa",
+            "FileCRC": "fbb7032b",
+            "FileSize": 1408,
+            "Encrypted": false,
+            "Tags": [
+                "lua"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_abresource_prefab.bundle",
+            "UnityCRC": 1605504989,
+            "FileHash": "7cf8ffb9aa3671289800b9c254949d8d",
+            "FileCRC": "b7e8f077",
+            "FileSize": 3510,
+            "Encrypted": false,
+            "Tags": [
+                "prefab"
+            ],
+            "DependBundleIDs": [
+                4
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_prefab2.bundle",
+            "UnityCRC": 417737274,
+            "FileHash": "838fcdbf0a544cc58a6de45621a2c030",
+            "FileCRC": "0d3ddb58",
+            "FileSize": 3628,
+            "Encrypted": false,
+            "Tags": [
+                "prefab2"
+            ],
+            "DependBundleIDs": [
+                3
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_ui.bundle",
+            "UnityCRC": 3208869396,
+            "FileHash": "94ad26ed5ea5e10a2437f8a7fa682763",
+            "FileCRC": "3b3563eb",
+            "FileSize": 7402,
+            "Encrypted": false,
+            "Tags": [
+                "prefab2",
+                "ui"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_abresource_ui_ui2.bundle",
+            "UnityCRC": 3446446355,
+            "FileHash": "96556f2428a4d3df29af00f9c40b2dfe",
+            "FileCRC": "b184b395",
+            "FileSize": 2410,
+            "Encrypted": false,
+            "Tags": [
+                "prefab",
+                "ui"
+            ],
+            "DependBundleIDs": []
+        }
+    ]
+}

@@ -2,21 +2,21 @@
     "Summary": {
         "YooVersion": "",
         "UnityVersion": "2022.3.57f1c2",
-        "BuildDate": "2025/5/22 17:00:02",
-        "BuildSeconds": 3,
+        "BuildDate": "2025/5/23 16:35:41",
+        "BuildSeconds": 1,
         "BuildTarget": 19,
         "BuildPipeline": "BuiltinBuildPipeline",
         "BuildBundleType": 2,
         "BuildPackageName": "DefaultPackage",
-        "BuildPackageVersion": "2025-05-22-1019",
-        "BuildPackageNote": "2025/5/22 16:59:58",
+        "BuildPackageVersion": "2025-05-23-995",
+        "BuildPackageNote": "2025/5/23 16:35:39",
         "UniqueBundleName": false,
-        "EnableAddressable": false,
+        "EnableAddressable": true,
         "LocationToLower": false,
         "IncludeAssetGUID": false,
         "AutoCollectShaders": true,
         "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
-        "ClearBuildCacheFiles": false,
+        "ClearBuildCacheFiles": true,
         "UseAssetDependencyDB": false,
         "EnableSharePackRule": true,
         "SingleReferencedPackAlone": true,
@@ -30,47 +30,66 @@
         "CacheServerPort": 0,
         "BuiltinShadersBundleName": "",
         "MonoScriptsBundleName": "",
-        "AssetFileTotalCount": 4,
-        "MainAssetTotalCount": 4,
-        "AllBundleTotalCount": 3,
-        "AllBundleTotalSize": 16199,
+        "AssetFileTotalCount": 6,
+        "MainAssetTotalCount": 6,
+        "AllBundleTotalCount": 5,
+        "AllBundleTotalSize": 18358,
         "EncryptedBundleTotalCount": 0,
         "EncryptedBundleTotalSize": 0
     },
     "AssetInfos": [
         {
-            "Address": "",
+            "Address": "main.lua",
             "AssetPath": "Assets/ABResource/Lua/main.lua.txt",
             "AssetGUID": "e757c7e76f69e58419feea38113aff88",
             "AssetTags": [
                 "lua"
             ],
             "MainBundleName": "assets_abresource_lua.bundle",
-            "MainBundleSize": 1364,
+            "MainBundleSize": 1408,
             "DependAssets": [],
             "DependBundles": []
         },
         {
-            "Address": "",
+            "Address": "test.lua",
             "AssetPath": "Assets/ABResource/Lua/test.lua.txt",
             "AssetGUID": "7ed021af57b0a034698e7f4fe9c77593",
             "AssetTags": [
                 "lua"
             ],
             "MainBundleName": "assets_abresource_lua.bundle",
-            "MainBundleSize": 1364,
+            "MainBundleSize": 1408,
             "DependAssets": [],
             "DependBundles": []
         },
         {
-            "Address": "",
+            "Address": "RawImage",
             "AssetPath": "Assets/ABResource/Prefab/RawImage.prefab",
             "AssetGUID": "ffa8d274f011b984eacc451093720ed8",
             "AssetTags": [
                 "prefab"
             ],
             "MainBundleName": "assets_abresource_prefab.bundle",
-            "MainBundleSize": 7433,
+            "MainBundleSize": 3510,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/ABResource/UI/UI2/B标签_词条_橙.png",
+                    "AssetGUID": "3457f783158e93347a257a9146ca0034"
+                }
+            ],
+            "DependBundles": [
+                "assets_abresource_ui_ui2.bundle"
+            ]
+        },
+        {
+            "Address": "Image",
+            "AssetPath": "Assets/ABResource/Prefab2/Image.prefab",
+            "AssetGUID": "63ff512327ba81d41849b5a2c2c6a2ca",
+            "AssetTags": [
+                "prefab2"
+            ],
+            "MainBundleName": "assets_abresource_prefab2.bundle",
+            "MainBundleSize": 3628,
             "DependAssets": [
                 {
                     "AssetPath": "Assets/ABResource/UI/btn1.png",
@@ -82,7 +101,7 @@
             ]
         },
         {
-            "Address": "",
+            "Address": "btn1",
             "AssetPath": "Assets/ABResource/UI/btn1.png",
             "AssetGUID": "aee20eaf84637df42aba5163ec937ca9",
             "AssetTags": [
@@ -92,15 +111,27 @@
             "MainBundleSize": 7402,
             "DependAssets": [],
             "DependBundles": []
+        },
+        {
+            "Address": "B标签_词条_橙",
+            "AssetPath": "Assets/ABResource/UI/UI2/B标签_词条_橙.png",
+            "AssetGUID": "3457f783158e93347a257a9146ca0034",
+            "AssetTags": [
+                "ui"
+            ],
+            "MainBundleName": "assets_abresource_ui_ui2.bundle",
+            "MainBundleSize": 2410,
+            "DependAssets": [],
+            "DependBundles": []
         }
     ],
     "BundleInfos": [
         {
             "BundleName": "assets_abresource_lua.bundle",
-            "FileName": "53c03802af45d23534065ad2038b25ac.bundle",
-            "FileHash": "53c03802af45d23534065ad2038b25ac",
-            "FileCRC": "1526ad85",
-            "FileSize": 1364,
+            "FileName": "32b0a4f1b82f13e09deab2f5e6a345fa.bundle",
+            "FileHash": "32b0a4f1b82f13e09deab2f5e6a345fa",
+            "FileCRC": "fbb7032b",
+            "FileSize": 1408,
             "Encrypted": false,
             "Tags": [
                 "lua"
@@ -120,13 +151,34 @@
         },
         {
             "BundleName": "assets_abresource_prefab.bundle",
-            "FileName": "c1c06bc127c8352beabac7c05c16bfa9.bundle",
-            "FileHash": "c1c06bc127c8352beabac7c05c16bfa9",
-            "FileCRC": "ba53cd2d",
-            "FileSize": 7433,
+            "FileName": "7cf8ffb9aa3671289800b9c254949d8d.bundle",
+            "FileHash": "7cf8ffb9aa3671289800b9c254949d8d",
+            "FileCRC": "b7e8f077",
+            "FileSize": 3510,
             "Encrypted": false,
             "Tags": [
                 "prefab"
+            ],
+            "DependBundles": [
+                "assets_abresource_ui_ui2.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/Prefab/RawImage.prefab",
+                    "AssetGUID": "ffa8d274f011b984eacc451093720ed8"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_prefab2.bundle",
+            "FileName": "838fcdbf0a544cc58a6de45621a2c030.bundle",
+            "FileHash": "838fcdbf0a544cc58a6de45621a2c030",
+            "FileCRC": "0d3ddb58",
+            "FileSize": 3628,
+            "Encrypted": false,
+            "Tags": [
+                "prefab2"
             ],
             "DependBundles": [
                 "assets_abresource_ui.bundle"
@@ -134,8 +186,8 @@
             "ReferenceBundles": [],
             "BundleContents": [
                 {
-                    "AssetPath": "Assets/ABResource/Prefab/RawImage.prefab",
-                    "AssetGUID": "ffa8d274f011b984eacc451093720ed8"
+                    "AssetPath": "Assets/ABResource/Prefab2/Image.prefab",
+                    "AssetGUID": "63ff512327ba81d41849b5a2c2c6a2ca"
                 }
             ]
         },
@@ -147,6 +199,28 @@
             "FileSize": 7402,
             "Encrypted": false,
             "Tags": [
+                "prefab2",
+                "ui"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_abresource_prefab2.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/UI/btn1.png",
+                    "AssetGUID": "aee20eaf84637df42aba5163ec937ca9"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_ui_ui2.bundle",
+            "FileName": "96556f2428a4d3df29af00f9c40b2dfe.bundle",
+            "FileHash": "96556f2428a4d3df29af00f9c40b2dfe",
+            "FileCRC": "b184b395",
+            "FileSize": 2410,
+            "Encrypted": false,
+            "Tags": [
                 "prefab",
                 "ui"
             ],
@@ -156,8 +230,8 @@
             ],
             "BundleContents": [
                 {
-                    "AssetPath": "Assets/ABResource/UI/btn1.png",
-                    "AssetGUID": "aee20eaf84637df42aba5163ec937ca9"
+                    "AssetPath": "Assets/ABResource/UI/UI2/B标签_词条_橙.png",
+                    "AssetGUID": "3457f783158e93347a257a9146ca0034"
                 }
             ]
         }

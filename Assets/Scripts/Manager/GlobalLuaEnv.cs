@@ -50,7 +50,7 @@ public class GlobalLuaEnv : SingletonMono<GlobalLuaEnv>
             filepath = filepath.Replace("/", ".");
             if (GlobalLuaEnv.readFromStreaming)
             {
-                return GetUTF8String(ABMgr.Instance.loadLuaFile(filepath));
+                return GetUTF8String(ABMgr.Instance.loadLuaFile(filepath + ".lua"));
             }
             else
             {
@@ -62,7 +62,7 @@ public class GlobalLuaEnv : SingletonMono<GlobalLuaEnv>
                 }
             }
 #else
-        return GetUTF8String(ABMgr.Instance.loadLuaFile(filepath));
+        return GetUTF8String(ABMgr.Instance.loadLuaFile(filepath + ".lua"));
 #endif
 
         }

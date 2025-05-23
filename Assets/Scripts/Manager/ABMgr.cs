@@ -16,7 +16,7 @@ public class ABMgr : SingletonMono<ABMgr>
 
     private Dictionary<string, byte[]> _luaDataMap;
 
-    private Dictionary<string, ABRecord> _loadABBundles;
+    private Dictionary<string, ABRecord> _loadABRecords;
 
     public override void Awake()
     {
@@ -27,11 +27,21 @@ public class ABMgr : SingletonMono<ABMgr>
     public void Init(Action finishCb)
     {
         _initFinishCb = finishCb;
-        _loadABBundles = new Dictionary<string, ABRecord>();
+        _loadABRecords = new Dictionary<string, ABRecord>();
+        _luaDataMap = new Dictionary<string, byte[]>();
 
         StartCoroutine(InitPackage());
     }
-    
+
+    private void InitFinish()
+    {
+        HasInit = true;
+        if (_initFinishCb != null)
+        {
+            _initFinishCb();
+        }
+    }
+
     private IEnumerator InitPackage()
     {
         //资源部初始化
@@ -124,25 +134,66 @@ public class ABMgr : SingletonMono<ABMgr>
     {
         if (GlobalLuaEnv.readFromStreaming)
         {
-            yield return LoadAssetsCo("Assets/ABResource/Lua/main.lua.txt", typeof(TextAsset));
+            yield return LoadAssetsCo("main.lua", typeof(TextAsset));
         }
     }
 
-    public IEnumerator LoadAssetsCo(string path, Type type)
+    public IEnumerator LoadAssetsCo(string assetPath, Type type)
     {
         ABRecord record;
-        if(!_loadABBundles.TryGetValue(path, out record))
+        if(!_loadABRecords.TryGetValue(assetPath, out record))
         {
-            record = new ABRecord(path, path);
-            _loadABBundles[path] = record;
+            AllAssetsHandle allAssetsHandle = _package.LoadAllAssetsAsync(assetPath, type);
+            record = new ABRecord(assetPath, assetPath, allAssetsHandle);
+            _loadABRecords[assetPath] = record;
 
-            AllAssetsHandle allAssetsHandle = _package.LoadAllAssetsAsync(path, type);
             yield return allAssetsHandle;
-            foreach (var assetObj in allAssetsHandle.AllAssetObjects)
+        
+            record.AddRef();
+            if (!record.HandleBase.IsValid)
             {
-                Debug.Log(assetObj.name);
+                UnloadAsset(assetPath);
+                yield break;
             }
-            //record.SetHandleBase(allAssetsHandle);
+
+            if (record.HandleBase.IsDone)
+            {
+                foreach (TextAsset assetObj in allAssetsHandle.AllAssetObjects)
+                {
+                    _luaDataMap.Add(assetObj.name, assetObj.bytes);
+                }
+                UnloadAsset(assetPath);
+                InitFinish();
+            }
+            else
+            {
+                (record.HandleBase as AllAssetsHandle).Completed += (AllAssetsHandle handle) =>
+                {
+                    foreach (TextAsset assetObj in allAssetsHandle.AllAssetObjects)
+                    {
+                        _luaDataMap.Add(assetObj.name, assetObj.bytes);
+                    }
+                    UnloadAsset(assetPath);
+                    InitFinish();
+                };
+            }
+        }
+    }
+
+    public void UnloadAsset(string assetPath)
+    {
+        ABRecord record;
+        if(_loadABRecords.TryGetValue(assetPath, out record))
+        {
+            record.Release();
+            if(record.Ref <= 0)
+            {
+                _loadABRecords.Remove(assetPath);
+            }
+            if (YooAssets.Initialized)
+            {
+                _package.TryUnloadUnusedAsset(assetPath);
+            }
         }
     }
 
@@ -153,7 +204,7 @@ public class ABMgr : SingletonMono<ABMgr>
         byte[] data = null;
         if(!_luaDataMap.TryGetValue(fileName, out data))
         {
-
+            Debug.LogError("====>> no lua file " + fileName);
         }
 
         return data;

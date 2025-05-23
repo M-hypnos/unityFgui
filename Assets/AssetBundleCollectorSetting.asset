@@ -18,25 +18,12 @@ MonoBehaviour:
   Packages:
   - PackageName: DefaultPackage
     PackageDesc: 
-    EnableAddressable: 0
+    EnableAddressable: 1
     LocationToLower: 0
     IncludeAssetGUID: 0
     AutoCollectShaders: 1
     IgnoreRuleName: NormalIgnoreRule
     Groups:
-    - GroupName: UI
-      GroupDesc: 
-      AssetTags: ui
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/ABResource/UI
-        CollectorGUID: b92e5e785e290f84ebbac3498f3dbc5b
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackCollector
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
     - GroupName: Lua
       GroupDesc: 
       AssetTags: lua
@@ -60,6 +47,32 @@ MonoBehaviour:
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackCollector
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Prefab2
+      GroupDesc: 
+      AssetTags: prefab2
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/ABResource/Prefab2
+        CollectorGUID: 11ae74f0302ec234884439358535908d
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackCollector
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: UI
+      GroupDesc: 
+      AssetTags: ui
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/ABResource/UI
+        CollectorGUID: b92e5e785e290f84ebbac3498f3dbc5b
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
