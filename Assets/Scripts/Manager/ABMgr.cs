@@ -5,7 +5,6 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Assertions;
 using YooAsset;
-using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 
 public class ABMgr : SingletonMono<ABMgr>
 {
@@ -44,7 +43,7 @@ public class ABMgr : SingletonMono<ABMgr>
 
     private IEnumerator InitPackage()
     {
-        //×ÊÔ´²¿³õÊ¼»¯
+        //ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
         YooAssets.Initialize();
         var package = YooAssets.TryGetPackage("DefaultPackage");
         if(package == null)
@@ -55,31 +54,31 @@ public class ABMgr : SingletonMono<ABMgr>
 
         InitializationOperation initOperation = null;
 
-//#if UNITY_EDITOR
-//        Debug.Log(" ===============>>   ±à¼­Æ÷");
-//        var buildResult = EditorSimulateModeHelper.SimulateBuild("DefaultPackage");
-//        var initParameters = new EditorSimulateModeParameters();
-//        initParameters.EditorFileSystemParameters = FileSystemParameters.CreateDefaultEditorFileSystemParameters(buildResult.PackageRootDirectory);
-//        initOperation = package.InitializeAsync(initParameters);
-//#else
-//        Debug.Log(" ===============>>   Ä£ÄâÕæ»ú");
-//        if (_hotUpdate)
-//        {
-//            string defaultHostServer = "http://127.0.0.1/CDN/Android/v1.0";
-//            string fallbackHostServer = "http://127.0.0.1/CDN/Android/v1.0";
-//            IRemoteServices remoteServices = new RemoteServices(defaultHostServer, fallbackHostServer);
-//            var initParameters = new HostPlayModeParameters();
-//            initParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
-//            initParameters.CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices);
-//            initOperation = package.InitializeAsync(initParameters);
-//        }
-//        else
-//        {
+#if UNITY_EDITOR
+       Debug.Log(" ===============>>   ï¿½à¼­ï¿½ï¿½");
+       var buildResult = EditorSimulateModeHelper.SimulateBuild("DefaultPackage");
+       var initParameters = new EditorSimulateModeParameters();
+       initParameters.EditorFileSystemParameters = FileSystemParameters.CreateDefaultEditorFileSystemParameters(buildResult.PackageRootDirectory);
+       initOperation = package.InitializeAsync(initParameters);
+#else
+       Debug.Log(" ===============>>   Ä£ï¿½ï¿½ï¿½ï¿½ï¿½");
+       if (_hotUpdate)
+       {
+           string defaultHostServer = "http://127.0.0.1/CDN/Android/v1.0";
+           string fallbackHostServer = "http://127.0.0.1/CDN/Android/v1.0";
+           IRemoteServices remoteServices = new RemoteServices(defaultHostServer, fallbackHostServer);
+           var initParameters = new HostPlayModeParameters();
+           initParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
+           initParameters.CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices);
+           initOperation = package.InitializeAsync(initParameters);
+       }
+       else
+       {
             var initParameters = new OfflinePlayModeParameters();
             initParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
             initOperation = package.InitializeAsync(initParameters);
-//        }
-//#endif
+       }
+#endif
         yield return initOperation;
 
         if (initOperation.Status != EOperationStatus.Succeed)
@@ -88,7 +87,7 @@ public class ABMgr : SingletonMono<ABMgr>
             yield break;
         }
 
-        //×ÊÔ´°üÔÚ³õÊ¼»¯³É¹¦Ö®ºó£¬ÐèÒª»ñÈ¡°ü¹ü°æ±¾
+        //ï¿½ï¿½Ô´ï¿½ï¿½ï¿½Ú³ï¿½Ê¼ï¿½ï¿½ï¿½É¹ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½æ±¾
         var requetVersionOp = package.RequestPackageVersionAsync(false);
         yield return requetVersionOp;
         if (requetVersionOp.Status != EOperationStatus.Succeed)
@@ -98,7 +97,7 @@ public class ABMgr : SingletonMono<ABMgr>
         }
         Debug.Log($"Request package Version : {requetVersionOp.PackageVersion}");
 
-        //¸üÐÂ×ÊÔ´Çåµ¥
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½åµ¥
         var updateManifestOp = package.UpdatePackageManifestAsync(requetVersionOp.PackageVersion);
         yield return updateManifestOp;
         if (updateManifestOp.Status != EOperationStatus.Succeed)
