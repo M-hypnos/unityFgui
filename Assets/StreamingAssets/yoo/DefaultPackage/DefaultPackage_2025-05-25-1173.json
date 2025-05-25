@@ -7,8 +7,8 @@
     "BuildBundleType": 2,
     "BuildPipeline": "BuiltinBuildPipeline",
     "PackageName": "DefaultPackage",
-    "PackageVersion": "2025-05-23-995",
-    "PackageNote": "2025/5/23 16:35:39",
+    "PackageVersion": "2025-05-25-1173",
+    "PackageNote": "5/25/2025 7:33:05 PM",
     "AssetList": [
         {
             "Address": "main.lua",
@@ -78,10 +78,10 @@
     "BundleList": [
         {
             "BundleName": "assets_abresource_lua.bundle",
-            "UnityCRC": 1100442442,
-            "FileHash": "32b0a4f1b82f13e09deab2f5e6a345fa",
-            "FileCRC": "fbb7032b",
-            "FileSize": 1408,
+            "UnityCRC": 1123729219,
+            "FileHash": "689235bcfdfe1e16efc6abc40aa0ac3a",
+            "FileCRC": "4f16a037",
+            "FileSize": 1403,
             "Encrypted": false,
             "Tags": [
                 "lua"
@@ -90,10 +90,10 @@
         },
         {
             "BundleName": "assets_abresource_prefab.bundle",
-            "UnityCRC": 1605504989,
-            "FileHash": "7cf8ffb9aa3671289800b9c254949d8d",
-            "FileCRC": "b7e8f077",
-            "FileSize": 3510,
+            "UnityCRC": 1386984223,
+            "FileHash": "40f326a5c2133966d60a0179fc796e9d",
+            "FileCRC": "65dfa80f",
+            "FileSize": 3509,
             "Encrypted": false,
             "Tags": [
                 "prefab"
@@ -104,10 +104,10 @@
         },
         {
             "BundleName": "assets_abresource_prefab2.bundle",
-            "UnityCRC": 417737274,
-            "FileHash": "838fcdbf0a544cc58a6de45621a2c030",
-            "FileCRC": "0d3ddb58",
-            "FileSize": 3628,
+            "UnityCRC": 3745247566,
+            "FileHash": "67d328d25392a4ef473ac262c6f851ed",
+            "FileCRC": "c6256a49",
+            "FileSize": 3627,
             "Encrypted": false,
             "Tags": [
                 "prefab2"
@@ -118,10 +118,10 @@
         },
         {
             "BundleName": "assets_abresource_ui.bundle",
-            "UnityCRC": 3208869396,
-            "FileHash": "94ad26ed5ea5e10a2437f8a7fa682763",
-            "FileCRC": "3b3563eb",
-            "FileSize": 7402,
+            "UnityCRC": 2741418961,
+            "FileHash": "18774413b2d44cf009dc367ef4183704",
+            "FileCRC": "657cc2f4",
+            "FileSize": 7400,
             "Encrypted": false,
             "Tags": [
                 "prefab2",
@@ -131,10 +131,10 @@
         },
         {
             "BundleName": "assets_abresource_ui_ui2.bundle",
-            "UnityCRC": 3446446355,
-            "FileHash": "96556f2428a4d3df29af00f9c40b2dfe",
-            "FileCRC": "b184b395",
-            "FileSize": 2410,
+            "UnityCRC": 1072637080,
+            "FileHash": "71bb6098aa4f7e7a38ed05adefc916ae",
+            "FileCRC": "1e6c1fda",
+            "FileSize": 2407,
             "Encrypted": false,
             "Tags": [
                 "prefab",

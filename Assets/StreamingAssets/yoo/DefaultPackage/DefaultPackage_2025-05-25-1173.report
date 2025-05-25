@@ -1,15 +1,15 @@
 {
     "Summary": {
         "YooVersion": "",
-        "UnityVersion": "2022.3.57f1c2",
-        "BuildDate": "2025/5/23 16:35:41",
-        "BuildSeconds": 1,
-        "BuildTarget": 19,
+        "UnityVersion": "2022.3.52f1c1",
+        "BuildDate": "5/25/2025 7:33:12 PM",
+        "BuildSeconds": 6,
+        "BuildTarget": 2,
         "BuildPipeline": "BuiltinBuildPipeline",
         "BuildBundleType": 2,
         "BuildPackageName": "DefaultPackage",
-        "BuildPackageVersion": "2025-05-23-995",
-        "BuildPackageNote": "2025/5/23 16:35:39",
+        "BuildPackageVersion": "2025-05-25-1173",
+        "BuildPackageNote": "5/25/2025 7:33:05 PM",
         "UniqueBundleName": false,
         "EnableAddressable": true,
         "LocationToLower": false,
@@ -33,7 +33,7 @@
         "AssetFileTotalCount": 6,
         "MainAssetTotalCount": 6,
         "AllBundleTotalCount": 5,
-        "AllBundleTotalSize": 18358,
+        "AllBundleTotalSize": 18346,
         "EncryptedBundleTotalCount": 0,
         "EncryptedBundleTotalSize": 0
     },
@@ -46,7 +46,7 @@
                 "lua"
             ],
             "MainBundleName": "assets_abresource_lua.bundle",
-            "MainBundleSize": 1408,
+            "MainBundleSize": 1403,
             "DependAssets": [],
             "DependBundles": []
         },
@@ -58,7 +58,7 @@
                 "lua"
             ],
             "MainBundleName": "assets_abresource_lua.bundle",
-            "MainBundleSize": 1408,
+            "MainBundleSize": 1403,
             "DependAssets": [],
             "DependBundles": []
         },
@@ -70,7 +70,7 @@
                 "prefab"
             ],
             "MainBundleName": "assets_abresource_prefab.bundle",
-            "MainBundleSize": 3510,
+            "MainBundleSize": 3509,
             "DependAssets": [
                 {
                     "AssetPath": "Assets/ABResource/UI/UI2/B标签_词条_橙.png",
@@ -89,7 +89,7 @@
                 "prefab2"
             ],
             "MainBundleName": "assets_abresource_prefab2.bundle",
-            "MainBundleSize": 3628,
+            "MainBundleSize": 3627,
             "DependAssets": [
                 {
                     "AssetPath": "Assets/ABResource/UI/btn1.png",
@@ -108,7 +108,7 @@
                 "ui"
             ],
             "MainBundleName": "assets_abresource_ui.bundle",
-            "MainBundleSize": 7402,
+            "MainBundleSize": 7400,
             "DependAssets": [],
             "DependBundles": []
         },
@@ -120,7 +120,7 @@
                 "ui"
             ],
             "MainBundleName": "assets_abresource_ui_ui2.bundle",
-            "MainBundleSize": 2410,
+            "MainBundleSize": 2407,
             "DependAssets": [],
             "DependBundles": []
         }
@@ -128,10 +128,10 @@
     "BundleInfos": [
         {
             "BundleName": "assets_abresource_lua.bundle",
-            "FileName": "32b0a4f1b82f13e09deab2f5e6a345fa.bundle",
-            "FileHash": "32b0a4f1b82f13e09deab2f5e6a345fa",
-            "FileCRC": "fbb7032b",
-            "FileSize": 1408,
+            "FileName": "689235bcfdfe1e16efc6abc40aa0ac3a.bundle",
+            "FileHash": "689235bcfdfe1e16efc6abc40aa0ac3a",
+            "FileCRC": "4f16a037",
+            "FileSize": 1403,
             "Encrypted": false,
             "Tags": [
                 "lua"
@@ -151,10 +151,10 @@
         },
         {
             "BundleName": "assets_abresource_prefab.bundle",
-            "FileName": "7cf8ffb9aa3671289800b9c254949d8d.bundle",
-            "FileHash": "7cf8ffb9aa3671289800b9c254949d8d",
-            "FileCRC": "b7e8f077",
-            "FileSize": 3510,
+            "FileName": "40f326a5c2133966d60a0179fc796e9d.bundle",
+            "FileHash": "40f326a5c2133966d60a0179fc796e9d",
+            "FileCRC": "65dfa80f",
+            "FileSize": 3509,
             "Encrypted": false,
             "Tags": [
                 "prefab"
@@ -172,10 +172,10 @@
         },
         {
             "BundleName": "assets_abresource_prefab2.bundle",
-            "FileName": "838fcdbf0a544cc58a6de45621a2c030.bundle",
-            "FileHash": "838fcdbf0a544cc58a6de45621a2c030",
-            "FileCRC": "0d3ddb58",
-            "FileSize": 3628,
+            "FileName": "67d328d25392a4ef473ac262c6f851ed.bundle",
+            "FileHash": "67d328d25392a4ef473ac262c6f851ed",
+            "FileCRC": "c6256a49",
+            "FileSize": 3627,
             "Encrypted": false,
             "Tags": [
                 "prefab2"
@@ -193,10 +193,10 @@
         },
         {
             "BundleName": "assets_abresource_ui.bundle",
-            "FileName": "94ad26ed5ea5e10a2437f8a7fa682763.bundle",
-            "FileHash": "94ad26ed5ea5e10a2437f8a7fa682763",
-            "FileCRC": "3b3563eb",
-            "FileSize": 7402,
+            "FileName": "18774413b2d44cf009dc367ef4183704.bundle",
+            "FileHash": "18774413b2d44cf009dc367ef4183704",
+            "FileCRC": "657cc2f4",
+            "FileSize": 7400,
             "Encrypted": false,
             "Tags": [
                 "prefab2",
@@ -215,10 +215,10 @@
         },
         {
             "BundleName": "assets_abresource_ui_ui2.bundle",
-            "FileName": "96556f2428a4d3df29af00f9c40b2dfe.bundle",
-            "FileHash": "96556f2428a4d3df29af00f9c40b2dfe",
-            "FileCRC": "b184b395",
-            "FileSize": 2410,
+            "FileName": "71bb6098aa4f7e7a38ed05adefc916ae.bundle",
+            "FileHash": "71bb6098aa4f7e7a38ed05adefc916ae",
+            "FileCRC": "1e6c1fda",
+            "FileSize": 2407,
             "Encrypted": false,
             "Tags": [
                 "prefab",
