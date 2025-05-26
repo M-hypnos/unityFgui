@@ -1,0 +1,287 @@
+{
+    "Summary": {
+        "YooVersion": "",
+        "UnityVersion": "2022.3.57f1c2",
+        "BuildDate": "2025/5/26 10:35:08",
+        "BuildSeconds": 5,
+        "BuildTarget": 19,
+        "BuildPipeline": "BuiltinBuildPipeline",
+        "BuildBundleType": 2,
+        "BuildPackageName": "DefaultPackage",
+        "BuildPackageVersion": "2025-05-26-635",
+        "BuildPackageNote": "2025/5/26 10:35:02",
+        "UniqueBundleName": false,
+        "EnableAddressable": true,
+        "LocationToLower": false,
+        "IncludeAssetGUID": false,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
+        "ClearBuildCacheFiles": true,
+        "UseAssetDependencyDB": false,
+        "EnableSharePackRule": true,
+        "SingleReferencedPackAlone": true,
+        "EncryptionClassName": "null",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "WriteLinkXML": true,
+        "CacheServerHost": "",
+        "CacheServerPort": 0,
+        "BuiltinShadersBundleName": "",
+        "MonoScriptsBundleName": "",
+        "AssetFileTotalCount": 8,
+        "MainAssetTotalCount": 8,
+        "AllBundleTotalCount": 6,
+        "AllBundleTotalSize": 23273,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "Test_atlas0",
+            "AssetPath": "Assets/ABResource/Fgui/Test_atlas0.png",
+            "AssetGUID": "f0b62efbf3cebd64db8454228e0701ce",
+            "AssetTags": [
+                "fgui"
+            ],
+            "MainBundleName": "assets_abresource_fgui.bundle",
+            "MainBundleSize": 4913,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "Test_fui",
+            "AssetPath": "Assets/ABResource/Fgui/Test_fui.bytes",
+            "AssetGUID": "ba2ee4098d5bf3b449ffde13d575fc4a",
+            "AssetTags": [
+                "fgui"
+            ],
+            "MainBundleName": "assets_abresource_fgui.bundle",
+            "MainBundleSize": 4913,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "main",
+            "AssetPath": "Assets/ABResource/Lua/main.lua",
+            "AssetGUID": "8faa05ec3fb25e941a51394d432382a6",
+            "AssetTags": [
+                "lua"
+            ],
+            "MainBundleName": "assets_abresource_lua.bundle",
+            "MainBundleSize": 1410,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "test",
+            "AssetPath": "Assets/ABResource/Lua/test.lua",
+            "AssetGUID": "42c85dc4d19b6d5439f054c0cb217095",
+            "AssetTags": [
+                "lua"
+            ],
+            "MainBundleName": "assets_abresource_lua.bundle",
+            "MainBundleSize": 1410,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "RawImage",
+            "AssetPath": "Assets/ABResource/Prefab/RawImage.prefab",
+            "AssetGUID": "ffa8d274f011b984eacc451093720ed8",
+            "AssetTags": [
+                "prefab"
+            ],
+            "MainBundleName": "assets_abresource_prefab.bundle",
+            "MainBundleSize": 3510,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/ABResource/UI/UI2/B标签_词条_橙.png",
+                    "AssetGUID": "3457f783158e93347a257a9146ca0034"
+                }
+            ],
+            "DependBundles": [
+                "assets_abresource_ui_ui2.bundle"
+            ]
+        },
+        {
+            "Address": "Image",
+            "AssetPath": "Assets/ABResource/Prefab2/Image.prefab",
+            "AssetGUID": "63ff512327ba81d41849b5a2c2c6a2ca",
+            "AssetTags": [
+                "prefab2"
+            ],
+            "MainBundleName": "assets_abresource_prefab2.bundle",
+            "MainBundleSize": 3628,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/ABResource/UI/btn1.png",
+                    "AssetGUID": "aee20eaf84637df42aba5163ec937ca9"
+                }
+            ],
+            "DependBundles": [
+                "assets_abresource_ui.bundle"
+            ]
+        },
+        {
+            "Address": "btn1",
+            "AssetPath": "Assets/ABResource/UI/btn1.png",
+            "AssetGUID": "aee20eaf84637df42aba5163ec937ca9",
+            "AssetTags": [
+                "ui"
+            ],
+            "MainBundleName": "assets_abresource_ui.bundle",
+            "MainBundleSize": 7402,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "B标签_词条_橙",
+            "AssetPath": "Assets/ABResource/UI/UI2/B标签_词条_橙.png",
+            "AssetGUID": "3457f783158e93347a257a9146ca0034",
+            "AssetTags": [
+                "ui"
+            ],
+            "MainBundleName": "assets_abresource_ui_ui2.bundle",
+            "MainBundleSize": 2410,
+            "DependAssets": [],
+            "DependBundles": []
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "assets_abresource_fgui.bundle",
+            "FileName": "2501b52a2eeb10f789caed4bd7cc8a3f.bundle",
+            "FileHash": "2501b52a2eeb10f789caed4bd7cc8a3f",
+            "FileCRC": "6e9516e3",
+            "FileSize": 4913,
+            "Encrypted": false,
+            "Tags": [
+                "fgui"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/Fgui/Test_atlas0.png",
+                    "AssetGUID": "f0b62efbf3cebd64db8454228e0701ce"
+                },
+                {
+                    "AssetPath": "Assets/ABResource/Fgui/Test_fui.bytes",
+                    "AssetGUID": "ba2ee4098d5bf3b449ffde13d575fc4a"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_lua.bundle",
+            "FileName": "c7c549413d28cb277aeb764bc842af0f.bundle",
+            "FileHash": "c7c549413d28cb277aeb764bc842af0f",
+            "FileCRC": "587e7e00",
+            "FileSize": 1410,
+            "Encrypted": false,
+            "Tags": [
+                "lua"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/Lua/main.lua",
+                    "AssetGUID": "8faa05ec3fb25e941a51394d432382a6"
+                },
+                {
+                    "AssetPath": "Assets/ABResource/Lua/test.lua",
+                    "AssetGUID": "42c85dc4d19b6d5439f054c0cb217095"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_prefab.bundle",
+            "FileName": "7cf8ffb9aa3671289800b9c254949d8d.bundle",
+            "FileHash": "7cf8ffb9aa3671289800b9c254949d8d",
+            "FileCRC": "b7e8f077",
+            "FileSize": 3510,
+            "Encrypted": false,
+            "Tags": [
+                "prefab"
+            ],
+            "DependBundles": [
+                "assets_abresource_ui_ui2.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/Prefab/RawImage.prefab",
+                    "AssetGUID": "ffa8d274f011b984eacc451093720ed8"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_prefab2.bundle",
+            "FileName": "838fcdbf0a544cc58a6de45621a2c030.bundle",
+            "FileHash": "838fcdbf0a544cc58a6de45621a2c030",
+            "FileCRC": "0d3ddb58",
+            "FileSize": 3628,
+            "Encrypted": false,
+            "Tags": [
+                "prefab2"
+            ],
+            "DependBundles": [
+                "assets_abresource_ui.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/Prefab2/Image.prefab",
+                    "AssetGUID": "63ff512327ba81d41849b5a2c2c6a2ca"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_ui.bundle",
+            "FileName": "94ad26ed5ea5e10a2437f8a7fa682763.bundle",
+            "FileHash": "94ad26ed5ea5e10a2437f8a7fa682763",
+            "FileCRC": "3b3563eb",
+            "FileSize": 7402,
+            "Encrypted": false,
+            "Tags": [
+                "prefab2",
+                "ui"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_abresource_prefab2.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/UI/btn1.png",
+                    "AssetGUID": "aee20eaf84637df42aba5163ec937ca9"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_abresource_ui_ui2.bundle",
+            "FileName": "96556f2428a4d3df29af00f9c40b2dfe.bundle",
+            "FileHash": "96556f2428a4d3df29af00f9c40b2dfe",
+            "FileCRC": "b184b395",
+            "FileSize": 2410,
+            "Encrypted": false,
+            "Tags": [
+                "prefab",
+                "ui"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_abresource_prefab.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/ABResource/UI/UI2/B标签_词条_橙.png",
+                    "AssetGUID": "3457f783158e93347a257a9146ca0034"
+                }
+            ]
+        }
+    ],
+    "IndependAssets": []
+}

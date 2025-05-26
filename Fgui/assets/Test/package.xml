@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="rglfjjj9">
+  <resources>
+    <component id="r1tk0" name="FUITestView.xml" path="/" exported="true"/>
+    <component id="qf7a1" name="FUITestListCell.xml" path="/component/"/>
+    <image id="qf7a2" name="!按钮_ 弹窗页签橙_选中.png" path="/"/>
+    <component id="qf7a3" name="Button1.xml" path="/component/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

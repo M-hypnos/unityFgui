@@ -6,11 +6,11 @@ using XLua;
 using UnityEngine.Windows;
 using System.Text;
 using System.Linq;
-
-
+using LuaAPI = XLua.LuaDLL.Lua;
+using RealStatePtr = System.IntPtr;
 public class GlobalLuaEnv : SingletonMono<GlobalLuaEnv>
 {
-    public static bool readFromStreaming = true;
+    public static bool readFromStreaming = false;
     public LuaEnv luaEnv;
     private IntPtr lPtr;
 
@@ -50,19 +50,19 @@ public class GlobalLuaEnv : SingletonMono<GlobalLuaEnv>
             filepath = filepath.Replace("/", ".");
             if (GlobalLuaEnv.readFromStreaming)
             {
-                return GetUTF8String(ABMgr.Instance.loadLuaFile(filepath + ".lua"));
+                return GetUTF8String(ABMgr.Instance.loadLuaFile(filepath));
             }
             else
             {
                 filepath = filepath.Replace(".", "/");
-                string path = Application.dataPath + "/ABResource/Lua/" + filepath + ".lua.txt";
+                string path = Application.dataPath + "/ABResource/Lua/" + filepath + ".lua";
                 if (File.Exists(path))
                 {
                     return GetUTF8String(File.ReadAllBytes(path));
                 }
             }
 #else
-        return GetUTF8String(ABMgr.Instance.loadLuaFile(filepath + ".lua"));
+        return GetUTF8String(ABMgr.Instance.loadLuaFile(filepath));
 #endif
 
         }
@@ -81,6 +81,15 @@ public class GlobalLuaEnv : SingletonMono<GlobalLuaEnv>
         _luaUpdate = main.Get<Action>("update");
         _luaExit = main.Get<Action>("exit");
 
+        int top = LuaAPI.lua_gettop(lPtr);
+
+        LuaAPI.lua_pushstdcallcfunction(lPtr, IsNull);
+        LuaAPI.xlua_setglobal(lPtr, "isNull");
+
+        LuaAPI.lua_pushstdcallcfunction(lPtr, GetClassType);
+        LuaAPI.xlua_setglobal(lPtr, "getClassType");
+
+        LuaAPI.lua_settop(lPtr, top);
 
         _luaInit.Invoke();
 
@@ -113,5 +122,56 @@ public class GlobalLuaEnv : SingletonMono<GlobalLuaEnv>
             luaEnv.Dispose();
             luaEnv = null;
         }
+    }
+
+    public static object ToObject(RealStatePtr L, int stackPos)
+    {
+        ObjectTranslator translator = GlobalLuaEnv.Instance.luaEnv.translator;
+        object csObj = translator.GetObject(L, stackPos);
+
+        return csObj;
+    }
+
+    [MonoPInvokeCallback(typeof(XLua.LuaDLL.lua_CSFunction))]
+    static int GetClassType(RealStatePtr L)
+    {
+        ObjectTranslator translator = GlobalLuaEnv.Instance.luaEnv.translator;
+        object csObj = translator.GetObject(L, -1);
+        if (csObj != null)
+        {
+            translator.Push(L, csObj.GetType().Name);
+        }
+        else
+        {
+            LuaAPI.lua_pushnil(L);
+        }
+
+        return 1;
+    }
+
+    [MonoPInvokeCallback(typeof(XLua.LuaDLL.lua_CSFunction))]
+    public static int IsNull(RealStatePtr L)
+    {
+        LuaTypes t = LuaAPI.lua_type(L, 1);
+
+        if (t == LuaTypes.LUA_TNIL)
+        {
+            LuaAPI.lua_pushboolean(L, true);
+        }
+        else
+        {
+            object o = GlobalLuaEnv.ToObject(L, -1);
+
+            if (o == null || o.Equals(null))
+            {
+                LuaAPI.lua_pushboolean(L, true);
+            }
+            else
+            {
+                LuaAPI.lua_pushboolean(L, false);
+            }
+        }
+
+        return 1;
     }
 }

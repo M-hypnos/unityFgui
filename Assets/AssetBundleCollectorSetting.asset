@@ -76,3 +76,16 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
+    - GroupName: FGUI
+      GroupDesc: 
+      AssetTags: fgui
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/ABResource/Fgui
+        CollectorGUID: 21a6edb3d1da552479b79ea01a56ec95
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 

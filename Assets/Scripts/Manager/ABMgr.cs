@@ -2,11 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.Assertions;
+using XLua;
 using YooAsset;
 using static UnityEngine.Rendering.VirtualTexturing.Debugging;
+using Object = UnityEngine.Object;
 
+[XLua.LuaCallCSharp]
 public class ABMgr : SingletonMono<ABMgr>
 {
     public bool HasInit { get; private set; }
@@ -134,7 +138,7 @@ public class ABMgr : SingletonMono<ABMgr>
     {
         if (GlobalLuaEnv.readFromStreaming)
         {
-            yield return LoadAssetsCo("main.lua", typeof(TextAsset));
+            yield return LoadAssetsCo("main", typeof(TextAsset));
         }
     }
 
@@ -200,7 +204,7 @@ public class ABMgr : SingletonMono<ABMgr>
     public byte[] loadLuaFile(string fileName)
     {
         fileName.Replace('\\', '/');
-        string path = fileName + ".lua";
+        string path = fileName;
         byte[] data = null;
         if(!_luaDataMap.TryGetValue(fileName, out data))
         {
@@ -210,5 +214,68 @@ public class ABMgr : SingletonMono<ABMgr>
         return data;
     }
 
+    public void LoadAsync<T>(string url, Action<Object> finishCb) where T : Object
+    {
 
+        ABRecord record;
+        if (!_loadABRecords.TryGetValue(url, out record))
+        {
+            AssetHandle assetHandle = _package.LoadAssetAsync<T>(url);
+            record = new ABRecord(url, url, assetHandle);
+            _loadABRecords[url] = record;
+
+            record.AddRef();
+            if (!record.HandleBase.IsValid)
+            {
+                UnloadAsset(url);
+                finishCb?.Invoke(null);
+                return;
+            }
+
+            if (record.HandleBase.IsDone)
+            {
+                if (assetHandle.AssetObject != null)
+                {
+                    UnloadAsset(url);
+                    finishCb?.Invoke(null);
+                }
+                else
+                {
+                    finishCb?.Invoke(assetHandle.AssetObject as T);
+                }
+            }
+            else
+            {
+                (record.HandleBase as AssetHandle).Completed += (AssetHandle handle) =>
+                {
+                    if (assetHandle.AssetObject != null)
+                    {
+                        UnloadAsset(url);
+                        finishCb?.Invoke(null);
+                    }
+                    finishCb?.Invoke(assetHandle.AssetObject as T);
+                };
+            }
+        }
+    }
+
+    [LuaCallCSharp]
+    public void LoadTextAssetAsync(string url, Action<TextAsset> finishCb)
+    {
+        LoadAsync<TextAsset>(url, (asset) =>
+        {
+            if (finishCb != null)
+            {
+                if (asset is TextAsset)
+                {
+                    finishCb(asset as TextAsset);
+                }
+                else
+                {
+                    finishCb(null);
+                }
+            }
+            ;
+        });
+    }
 }

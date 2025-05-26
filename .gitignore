@@ -24,3 +24,8 @@ YooAsset.Editor.csproj
 .vs/
 Bundles/
 obj/
+spine-csharp.csproj
+spine-unity.csproj
+spine-unity-editor.csproj
+spine-unity-examples.csproj
+spine-unity-examples-editor.csproj

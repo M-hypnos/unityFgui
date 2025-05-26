@@ -11,6 +11,9 @@ using System;
 using XLua;
 using System.Reflection;
 using System.Linq;
+using System.Collections;
+using UnityEngine.Events;
+using UnityEngine;
 
 //配置的详细介绍请看Doc下《XLua的配置.doc》
 public static class ExampleConfig
@@ -247,7 +250,44 @@ public static class ExampleConfig
     //    }
     //}
     //--------------end 热补丁自动化配置-------------------------
-    
+    [CSharpCallLua]
+    public static List<Type> CSharpCallLua = new List<Type>()
+        {
+            typeof(Action),
+            typeof(Action<bool>),
+            typeof(Action<int>),
+            typeof(Action<string>),
+            typeof(Action<object>),
+            typeof(Action<int, int>),
+            typeof(Action<int, string>),
+            typeof(Action<int, string, int>),
+            typeof(Action<int, Transform>),
+            typeof(Action<int, GameObject>),
+            typeof(Action<TextAsset>),
+            typeof(Action<bool, string>),
+            typeof(Action<object, Action>),
+            typeof(Action<string, bool, string>),
+            typeof(Action<GameObject, string>),
+            typeof(Action<Vector2>),
+            typeof(UnityAction<bool>),
+            typeof(Action<UnityEngine.Sprite, float>),
+            typeof(UnityAction<float>),
+            typeof(UnityAction<int>),
+            typeof(UnityAction<Color>),
+            typeof(UnityAction<UnityEngine.Vector2>),
+            typeof(UnityAction<UnityEngine.Vector3>),
+            typeof(Application.LogCallback),
+            typeof(Func<int>),
+            typeof(Func<int, bool>),
+            typeof(Func<string, bool>),
+            typeof(Func<string, string>),
+            typeof(Func<long, string>),
+            typeof(Func<DateTime, string>),
+            typeof(Color),
+            typeof(IEnumerator),
+            typeof(Spine.AnimationState.TrackEntryEventDelegate),
+    };
+
     [BlackList]
     public static List<Type> BlackGenericTypeList = new List<Type>()
     {

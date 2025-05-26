@@ -43,6 +43,7 @@
 		<type fullname="FairyGUI.EaseType" preserve="all"/>
 		<type fullname="FairyGUI.TweenValue" preserve="all"/>
 		<type fullname="FairyGUI.GoWrapper" preserve="all"/>
+		<type fullname="ABMgr" preserve="all"/>
 		<type fullname="Tutorial.BaseClass" preserve="all"/>
 		<type fullname="Tutorial.TestEnum" preserve="all"/>
 		<type fullname="Tutorial.DerivedClass" preserve="all"/>

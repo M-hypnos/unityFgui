@@ -40,4 +40,14 @@ namespace YooAsset.Editor
             return $"{fileInfo.Directory.Name}_{fileName}";
         }
     }
+
+    //[DisplayName("定位地址: lua文件")]
+    //public class AddressByLua: IAddressRule
+    //{
+    //    string IAddressRule.GetAssetAddress(AddressRuleData data)
+    //    {
+    //        string fileName = Path.GetFileNameWithoutExtension(data.AssetPath);
+    //        string dirName = Path.GetDirectoryName(data.AssetPath).Replace("\\", "/");
+    //    }
+    //}
 }
