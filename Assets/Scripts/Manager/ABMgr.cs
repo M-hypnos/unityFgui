@@ -55,31 +55,31 @@ public class ABMgr : SingletonMono<ABMgr>
 
         InitializationOperation initOperation = null;
 
-//#if UNITY_EDITOR
-//        Debug.Log(" ===============>>   编辑器");
-//        var buildResult = EditorSimulateModeHelper.SimulateBuild("DefaultPackage");
-//        var initParameters = new EditorSimulateModeParameters();
-//        initParameters.EditorFileSystemParameters = FileSystemParameters.CreateDefaultEditorFileSystemParameters(buildResult.PackageRootDirectory);
-//        initOperation = package.InitializeAsync(initParameters);
-//#else
-//        Debug.Log(" ===============>>   模拟真机");
-//        if (_hotUpdate)
-//        {
-//            string defaultHostServer = "http://127.0.0.1/CDN/Android/v1.0";
-//            string fallbackHostServer = "http://127.0.0.1/CDN/Android/v1.0";
-//            IRemoteServices remoteServices = new RemoteServices(defaultHostServer, fallbackHostServer);
-//            var initParameters = new HostPlayModeParameters();
-//            initParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
-//            initParameters.CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices);
-//            initOperation = package.InitializeAsync(initParameters);
-//        }
-//        else
-//        {
+#if UNITY_EDITOR
+        Debug.Log(" ===============>>   编辑器");
+        var buildResult = EditorSimulateModeHelper.SimulateBuild("DefaultPackage");
+        var initParameters = new EditorSimulateModeParameters();
+        initParameters.EditorFileSystemParameters = FileSystemParameters.CreateDefaultEditorFileSystemParameters(buildResult.PackageRootDirectory);
+        initOperation = package.InitializeAsync(initParameters);
+#else
+        Debug.Log(" ===============>>   模拟真机");
+        if (_hotUpdate)
+        {
+            string defaultHostServer = "http://127.0.0.1/CDN/Android/v1.0";
+            string fallbackHostServer = "http://127.0.0.1/CDN/Android/v1.0";
+            IRemoteServices remoteServices = new RemoteServices(defaultHostServer, fallbackHostServer);
+            var initParameters = new HostPlayModeParameters();
+            initParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
+            initParameters.CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices);
+            initOperation = package.InitializeAsync(initParameters);
+        }
+        else
+        {
             var initParameters = new OfflinePlayModeParameters();
             initParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
             initOperation = package.InitializeAsync(initParameters);
-//        }
-//#endif
+    }
+#endif
         yield return initOperation;
 
         if (initOperation.Status != EOperationStatus.Succeed)
